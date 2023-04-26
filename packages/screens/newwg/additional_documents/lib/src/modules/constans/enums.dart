@@ -1,0 +1,1 @@
+enum photoTypes { ktp, selfieWithOfficer }

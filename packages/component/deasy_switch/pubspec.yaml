@@ -1,0 +1,23 @@
+name: deasy_switch
+description: Deasy internal package to show switch widget
+version: 1.0.0
+publish_to: 'none'
+
+environment:
+  sdk: '>=2.18.5 <3.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  deasy_lint:
+    path: ../../dependency/deasy_lint
+  deasy_color:
+    path: ../../util/deasy_color
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:

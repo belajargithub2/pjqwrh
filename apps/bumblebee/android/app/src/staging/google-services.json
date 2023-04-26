@@ -1,0 +1,121 @@
+{
+  "project_info": {
+    "project_number": "98874648516",
+    "project_id": "deasy-production",
+    "storage_bucket": "deasy-production.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:98874648516:android:bfcdd618c3e81405402691",
+        "android_client_info": {
+          "package_name": "com.kreditplus.deasy.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "98874648516-oosodtr57jv5fjtd5nvifnoea2427doe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIlKybA3ljGhTO32Y8enwjh2_dXxDLuPY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "98874648516-oosodtr57jv5fjtd5nvifnoea2427doe.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "98874648516-0t1898tdj3ugbc7pkp6sbrfdpd28mj78.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.kreditplus.deasy.ios",
+                "app_store_id": "1609940897"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:98874648516:android:ccfccebf1b38ebab402691",
+        "android_client_info": {
+          "package_name": "com.kreditplus.deasy.android.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "98874648516-oosodtr57jv5fjtd5nvifnoea2427doe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIlKybA3ljGhTO32Y8enwjh2_dXxDLuPY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "98874648516-oosodtr57jv5fjtd5nvifnoea2427doe.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "98874648516-0t1898tdj3ugbc7pkp6sbrfdpd28mj78.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.kreditplus.deasy.ios",
+                "app_store_id": "1609940897"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:98874648516:android:b12c782163f9e5a2402691",
+        "android_client_info": {
+          "package_name": "com.kreditplus.deasy.android.staging"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "98874648516-oosodtr57jv5fjtd5nvifnoea2427doe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIlKybA3ljGhTO32Y8enwjh2_dXxDLuPY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "98874648516-oosodtr57jv5fjtd5nvifnoea2427doe.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "98874648516-0t1898tdj3ugbc7pkp6sbrfdpd28mj78.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.kreditplus.deasy.ios",
+                "app_store_id": "1609940897"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

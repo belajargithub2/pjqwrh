@@ -1,0 +1,78 @@
+name: Build Android Production AAB ubuntu job - in mode test use staging 
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: production
+        default: production
+        required: true
+  push:
+    branches: 'master'
+  
+
+jobs:
+  build_code:
+    name: Check out & Setup Flutter
+    runs-on: ubuntu-latest
+    env:
+      environment: staging
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup JDK Version
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin' # See 'Supported distributions' for available options
+          java-version: '11'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v2
+
+      - name: flutter Action
+        uses: subosito/flutter-action@v2.5.0
+        with:
+          flutter-version: '3.3.9'
+          channel: 'stable'
+          cache: true
+
+      - name: flutter check version
+        run: flutter --version
+
+      - name: Melos activation
+        run: flutter pub global activate melos
+
+      - name: Creating the key.properties file
+        run: |
+          echo keyPassword=\${{ secrets.KEY_STORE }} > apps/bumblebee/android/key.properties
+          echo storePassword=\${{ secrets.KEY_PASSWORD }} >> apps/bumblebee/android/key.properties
+          echo keyAlias=\${{ secrets.KEY_ALIAS }} >> apps/bumblebee/android/key.properties
+
+      - name: Decode base64 key into a file
+        run: echo "${{ secrets.KEYSTORE2 }}" | base64 --decode > apps/bumblebee/android/app/key.jks
+
+      - name: Bumblebee Transform AAB
+        run: melos run bumblebee:transform:prod:aab
+
+      - name: Get latest commit
+        id: vars
+        run: echo "LATEST_COMMIT_MESSAGE=$(echo $(git log -1 --pretty=format:"%s"))" >> $GITHUB_OUTPUT
+
+      - name: Upload to Firebase App Distribution
+        uses: wzieba/Firebase-Distribution-Github-Action@v1.4.0
+        with:
+          appId: ${{ secrets.FIREBASE_APP_ID_PRODUCTION }}
+          serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT_PROD }}
+          groups: deasy-internal-tester
+          releaseNotes: ${{ steps.vars.outputs.LATEST_COMMIT_MESSAGE }}
+          file: apps/bumblebee/build/app/outputs/bundle/prodRelease/app-prod-release.aab
+          debug: true
+
+      - name: Google Chat Notification
+        uses: Co-qn/google-chat-notification@releases/v1
+        with:
+          name: Build Deasy Android AAB Production(${{ github.run_number }})
+          url: ${{ secrets.GOOGLE_CHAT_WEBHOOK_BUILD }}
+          status: ${{ job.status }}
+        if: always()

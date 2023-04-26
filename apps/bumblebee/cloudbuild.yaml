@@ -1,0 +1,13 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/flutter-android', '-f', 'Dockerfile_Android', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'run', '--name', 'container-builder', 'gcr.io/$PROJECT_ID/flutter-android']
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'cp', 'container-builder:/usr/local/bin/app/build/app/outputs/flutter-apk/app-armeabi-v7a-dev-debug.apk', '.']
+artifacts:
+  objects:
+    location: 'gs://deasy-flutter-apk-build/'
+    paths: ['*.apk']
+
+timeout: 2400s

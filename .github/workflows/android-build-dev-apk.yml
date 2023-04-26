@@ -1,0 +1,76 @@
+name: Build Android Dev Apk ubuntu job
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: string
+        default: DEV
+        required: true
+#  push:
+#    branches:
+#      - 'apk-develop'
+#      - 'apk-newwg'
+#      - 'apk-testing'
+#    paths:
+#      - 'apps/bumblebee/**'
+
+jobs:
+
+  build_code:
+    name: Check out & Setup Flutter
+    runs-on: ubuntu-latest
+    env:
+      environment: DEV
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup JDK Version
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin' # See 'Supported distributions' for available options
+          java-version: '11'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v2
+
+      - name: flutter Action
+        uses: subosito/flutter-action@v2.5.0
+        with:
+          flutter-version: '3.3.9'
+          channel: 'stable'
+          cache: true
+
+      - name: flutter check version
+        run: flutter --version
+
+      - name: Melos activation
+        run: flutter pub global activate melos
+
+      - name: Bumblebee Transform
+        run: melos run bumblebee:transform:dev
+
+      - name: Get latest commit
+        id: vars
+        run: echo "LATEST_COMMIT_MESSAGE=$(echo $(git log -1 --pretty=format:"%s"))" >> $GITHUB_OUTPUT
+
+
+#      - name: Upload to Firebase App Distribution
+#        uses: wzieba/Firebase-Distribution-Github-Action@v1.4.0
+#        with:
+#          appId: ${{ secrets.FIREBASE_APP_ID_DEV }}
+#          serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
+#          groups: internal-qa
+#          releaseNotes: ${{ steps.vars.outputs.LATEST_COMMIT_MESSAGE }}
+#          file: apps/bumblebee/build/app/outputs/flutter-apk/app-dev-debug.apk
+#          debug: true
+#
+#      - name: Google Chat Notification
+#        uses: Co-qn/google-chat-notification@releases/v1
+#        with:
+#          name: Build Deasy Android version runner(${{ github.run_number }})
+#          url: ${{ secrets.GOOGLE_CHAT_WEBHOOK_BUILD }}
+#          status: ${{ job.status }}
+#        if: always()
+

@@ -1,0 +1,188 @@
+name: my_deasy
+repository: https://github.com/KB-FMF/deasy
+
+packages:
+  - "apps/**"
+  - "packages/**"
+  - "libs/**"
+
+command:
+  bootstrap:
+    usePubspecOverrides: true
+  version:
+    workspaceChangelog: true
+    linkToCommits: true
+
+scripts:
+  analyze:
+    run: melos exec -- "flutter analyze"
+    description: Run `flutter analyze` in all packages
+
+  format:
+    run: melos exec -- "flutter format . --set-exit-if-changed"
+    description: Run `flutter format .` in all packages
+
+  test:
+    # Only run the test command when the package has a test directory
+    run: melos exec --dir-exists=test -- "flutter test"
+    description: Run `flutter test` in all packages
+
+  prepare:
+    run: melos clean && melos bootstrap
+
+  # Run mobile with debug mode
+  run-dev-debug-bumblebee:
+    run: melos exec --scope="*apps/bumblebee*,kreditplus_deasy_mobile" \
+      flutter run --debug --flavor dev -t lib/flavor/dev/main_dev.dart
+
+  run-staging-debug-bumblebee:
+    run: melos exec --scope="*apps/bumblebee*,kreditplus_deasy_mobile" \
+      flutter run --debug --flavor staging -t lib/flavor/staging/main_staging.dart
+
+  run-prod-debug-bumblebee:
+    run: melos exec --scope="*apps/bumblebee*,kreditplus_deasy_mobile" \
+      flutter run --debug --flavor prod -t lib/flavor/prod/main_prod.dart
+
+  # Run iOS with debug mode
+  run-ios-prod-debug-bumblebee:
+    run: melos exec --scope="*apps/bumblebee*,kreditplus_deasy_mobile" \
+      flutter run --debug --flavor production -t lib/flavor/prod/main_prod.dart
+
+  run-mock-debug-bumblebee:
+    run: melos exec --scope="*apps/bumblebee*,kreditplus_deasy_mobile" \
+      flutter run --debug --flavor mock -t lib/flavor/mock/main_mock.dart
+
+  # Run mobile with release mode
+  run-dev-release-bumblebee:
+    run: melos exec --scope="*apps/bumblebee*,kreditplus_deasy_mobile" \
+      flutter run --release --flavor dev -t lib/flavor/dev/main_dev.dart
+
+  run-staging-release-bumblebee:
+    run: melos exec --scope="*apps/bumblebee*,kreditplus_deasy_mobile" \
+      flutter run --release --flavor staging -t lib/flavor/staging/main_staging.dart
+
+  run-prod-release-bumblebee:
+    run: melos exec --scope="*apps/bumblebee*,kreditplus_deasy_mobile" \
+      flutter run --release --flavor prod -t lib/flavor/prod/main_prod.dart
+
+  # Run iOS with debug mode
+  run-ios-prod-release-bumblebee:
+    run: melos exec --scope="*apps/bumblebee*,kreditplus_deasy_mobile" \
+      flutter run --release --flavor production -t lib/flavor/prod/main_prod.dart
+
+  run-mock-release-bumblebee:
+    run: melos exec --scope="*apps/bumblebee*,kreditplus_deasy_mobile" \
+      flutter run --release --flavor mock -t lib/flavor/mock/main_mock.dart
+
+
+  # Run web with debug mode
+  run-dev-debug-optimus:
+    run: melos exec --scope="*apps/optimus*,kreditplus_deasy_website" \
+      flutter run -d chrome --debug --flavor dev -t lib/flavor/dev/main_dev.dart
+
+  run-staging-debug-optimus:
+    run:
+      flutter run -d chrome --debug --flavor staging -t lib/flavor/staging/main_staging.dart
+
+  run-prod-debug-optimus:
+    run: melos exec --scope="*apps/optimus*,kreditplus_deasy_website" \
+      flutter run -d chrome --debug --flavor prod -t lib/flavor/prod/main_prod.dart
+
+  run-mock-debug-optimus:
+    run: melos exec --scope="*apps/optimus*,kreditplus_deasy_website" \
+      flutter run -d chrome --debug --flavor mock -t lib/flavor/mock/main_mock.dart
+
+  # Run web with release mode
+  run-dev-release-optimus:
+    run: melos exec --scope="*apps/optimus*,kreditplus_deasy_website" \
+      flutter run -d chrome --release --flavor dev -t lib/flavor/dev/main_dev.dart
+
+  run-staging-release-optimus:
+    run: melos exec --scope="*apps/optimus*,kreditplus_deasy_website" \
+      flutter run -d chrome --release --flavor staging -t lib/flavor/staging/main_staging.dart
+
+  run-prod-release-optimus:
+    run: melos exec --scope="*apps/optimus*,kreditplus_deasy_website" \
+      flutter run -d chrome --release --flavor prod -t lib/flavor/prod/main_prod.dart
+
+  run-mock-release-optimus:
+    run: melos exec --scope="*apps/optimus*,kreditplus_deasy_website" \
+      flutter run -d chrome --release --flavor mock -t lib/flavor/mock/main_mock.dart
+
+  # Build
+  build:bumblebee:dev:
+    run: melos exec -c 1 --scope="*apps/bumblebee*,kreditplus_deasy_mobile" --ignore="*_ios*" --fail-fast -- \
+      flutter build apk --debug --flavor dev -t lib/flavor/dev/main_dev.dart
+    description: Build a specific bumblebee APK for env dev.
+
+  build:bumblebee:staging:
+    run: melos exec -c 1 --scope="*apps/bumblebee*,kreditplus_deasy_mobile" --ignore="*_ios*" --fail-fast -- \
+      flutter build apk --release --flavor staging -t lib/flavor/staging/main_staging.dart
+    description: Build a specific bumblebee APK for env staging.
+
+  build:bumblebee:prod:
+    run: melos exec -c 1 --scope="*apps/bumblebee*,kreditplus_deasy_mobile" --ignore="*_ios*" --fail-fast -- \
+      flutter build apk --debug --flavor prod -t lib/flavor/prod/main_prod.dart
+    description: Build a specific bumblebee APK for env staging.
+
+  build:bumblebee:mock:
+    run: melos exec -c 1 --scope="*apps/bumblebee*,kreditplus_deasy_mobile" --ignore="*_ios*" --fail-fast -- \
+      flutter build apk --debug --flavor mock -t lib/flavor/mock/main_mock.dart
+    description: Build a specific bumblebee APK for env mock.
+
+  build:bumblebee:prod:aab:
+    run: melos exec -c 1 --scope="*apps/bumblebee*,kreditplus_deasy_mobile" --ignore="*_ios*" --fail-fast -- \
+      flutter build appbundle --flavor prod -t lib/flavor/prod/main_prod.dart
+    description: Build a specific bumblebee AAB for env prod.
+
+  bumblebee:transform:dev:
+    run: melos run prepare && melos run build:bumblebee:dev
+    description: Clean, Bootstrap & Build env dev
+
+  bumblebee:transform:staging:
+    run: melos run prepare && melos run build:bumblebee:staging
+    description: Clean, Bootstrap & Build for env staging
+
+  bumblebee:transform:prod:
+    run: melos run prepare && melos run build:bumblebee:prod
+    description: Clean, Bootstrap & Build env prod
+
+  bumblebee:transform:mock:
+    run: melos run prepare && melos run build:bumblebee:mock
+    description: Clean, Bootstrap & Build env mock
+
+  bumblebee:transform:prod:aab:
+    run: melos run prepare && melos run build:bumblebee:prod:aab
+    description: Clean, Bootstrap & Build AAB env prod
+
+
+  build:optimus:dev:
+    run: melos exec -c 1 --scope="*apps/optimus*,kreditplus_deasy_website" --ignore="*_ios*" --fail-fast -- \
+      flutter build web --web-renderer canvaskit --release -t lib/flavor/dev/main_dev.dart --verbose
+    description: Build Deasy Website
+
+  build:optimus:staging:
+    run: melos exec -c 1 --scope="*apps/optimus*,kreditplus_deasy_website" --ignore="*_ios*" --fail-fast -- \
+      flutter build web --web-renderer canvaskit --release -t lib/flavor/staging/main_staging.dart --verbose
+    description: Build Deasy Website
+
+  build:optimus:mock:
+    run: melos exec -c 1 --scope="*apps/optimus*,kreditplus_deasy_website" --ignore="*_ios*" --fail-fast -- \
+      flutter build web --web-renderer canvaskit --release -t lib/flavor/mock/main_mock.dart --verbose
+    description: Build Deasy Website
+
+  optimus:transform:dev:
+    run: melos run prepare && melos run build:optimus:dev
+    description: Clean > Bootstrap > Build Deasy Web
+
+  optimus:transform:staging:
+    run: melos run prepare && melos run build:optimus:staging
+    description: Clean > Bootstrap > Build Deasy Staging
+
+  optimus:transform:mock:
+    run: melos run prepare && melos run build:optimus:mock
+    description: Clean > Bootstrap > Build Deasy Web
+
+
+
+

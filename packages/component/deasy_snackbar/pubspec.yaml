@@ -1,0 +1,21 @@
+name: deasy_snackbar
+description: The internal Deasy's package to support snackbar.
+version: 1.0.0
+publish_to: 'none'
+
+environment:
+  sdk: '>=2.18.2 <3.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  hexcolor: ^2.0.7
+  another_flushbar: ^1.12.29
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  deasy_lint:
+    path: ../../dependency/deasy_lint

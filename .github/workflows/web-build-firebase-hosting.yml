@@ -1,0 +1,39 @@
+name: Deploy Web to Firebase
+
+on:
+  workflow_dispatch:
+  push:
+    branches: 'web-firebase'
+    # branches: 'feat/fix-gh-web'
+jobs:
+  build_and_preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # Add any build steps here. For example:
+      - name: flutter Action
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.3.9'
+          channel: 'stable'
+
+      - name: activate melos
+        run: flutter pub global activate melos
+
+      - name: build web develop
+        run: melos run optimus:transform:dev
+
+      - name: upload firebase
+        uses: lowply/deploy-firebase@v0.0.5
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN_DEV }}
+          FIREBASE_PROJECT: merchant-app-74cb3
+
+      - name: Google Chat Notification
+        uses: Co-qn/google-chat-notification@releases/v1
+        with:
+          name: Build Web Firebase Finished! (${{ github.run_number }})
+          url: ${{ secrets.GOOGLE_CHAT_WEBHOOK }}
+          status: ${{ job.status }}
+        if: always()
+      

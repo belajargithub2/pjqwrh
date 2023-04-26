@@ -1,0 +1,33 @@
+name: Update web-develop
+
+on:
+  workflow_dispatch:
+  
+  push:
+    branches:
+      - develop
+    paths:
+      - 'apps/optimus/**'
+
+jobs:
+  update-cms-master:
+    name: Merge develop into web-develop
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: merge
+        uses: mtanzi/action-automerge@v1
+        id: merge
+        with:
+          github_token: ${{ github.token }}
+          source: 'develop'
+          target: 'web-develop'
+          webhook_url: ${{ secrets.GOOGLE_CHAT_WEBHOOK }}
+      - name: Google Chat Notification
+        uses: Co-qn/google-chat-notification@releases/v1
+        with:
+          name: Merge develop to Web Develop (${{ github.run_number }})
+          url: ${{ secrets.GOOGLE_CHAT_WEBHOOK }}
+          status: ${{ job.status }}
+        if: always()

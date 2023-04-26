@@ -1,0 +1,271 @@
+name: kreditplus_deasy_mobile
+description: Deasy Flutter application.
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+
+version: 1.5.1+27
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  intl: ^0.17.0
+
+  deasy_text:
+    path: ../../packages/component/deasy_text
+
+  deasy_dialog:
+    path: ../../packages/component/deasy_dialog
+
+  deasy_responsive:
+    path: ../../packages/component/deasy_responsive
+
+  deasy_color:
+    path: ../../packages/util/deasy_color
+
+  deasy_buttons:
+    path: ../../packages/component/deasy_buttons
+
+  deasy_size_config:
+    path: ../../packages/component/deasy_size_config
+
+  deasy_animation:
+    path: ../../packages/component/deasy_animation
+
+  deasy_spinner:
+    path: ../../packages/component/deasy_spinner
+
+  deasy_text_form:
+    path: ../../packages/component/deasy_text_form
+
+  deasy_helper:
+    path: ../../packages/helper/deasy_helper
+
+  deasy_dialog_wrapper:
+    path: ../../packages/component/deasy_dialog_wrapper
+
+  deasy_logger:
+    path: ../../packages/helper/deasy_logger
+
+  deasy_encryptor:
+    path: ../../packages/helper/deasy_encryptor
+
+  deasy_snackbar:
+    path: ../../packages/component/deasy_snackbar
+
+  deasy_logout:
+    path: ../../packages/util/deasy_logout
+  
+  deasy_config:
+    path: ../../packages/core/deasy_config
+    
+  deasy_pocket:
+    path: ../../packages/util/deasy_pocket
+  
+  deasy_device_info:
+    path: ../../packages/util/deasy_device_info
+
+  stepper:
+    path: ../../packages/screens/newwg/stepper
+
+  verification_customer:
+    path: ../../packages/screens/newwg/verification_customer
+
+  additional_documents:
+    path: ../../packages/screens/newwg/additional_documents
+
+  customer_confirmation:
+    path: ../../packages/screens/newwg/customer_confirmation
+
+  deasy_models:
+    path: ../../packages/core/deasy_models
+
+  deasy_repository:
+    path: ../../packages/core/deasy_repository
+
+  deasy_timer:
+    path: ../../packages/component/deasy_timer
+
+  order:
+    path: ../../packages/screens/newwg/order
+
+  newwg:
+    path: ../../libs/newwg
+
+  deasy_circular_checkbox:
+    path: ../../packages/component/deasy_circular_checkbox
+
+  deasy_custom_paging:
+    path: ../../packages/component/deasy_custom_paging
+
+  # localization
+  flutter_localizations:
+    sdk: flutter
+
+  # http client
+  dio: ^4.0.4
+
+  #request tracker
+  requests_inspector: ^2.3.4
+
+  # notification
+  flutter_local_notifications: ^12.0.4
+
+  # dropdown search
+  select_dialog: ^2.0.0
+
+  # local storage
+  shared_preferences: ^2.0.15
+
+  # svg handler
+  flutter_svg: ^1.1.6
+
+  # QR code handler
+  qr_flutter: ^4.0.0
+
+  # flushbar
+  another_flushbar: ^1.12.29
+
+  #animation
+  simple_animations: ^4.1.0
+
+  syncfusion_flutter_datepicker: "20.4.44"
+
+  # PDF
+  flutter_cached_pdfview: ^0.4.1
+
+  # Get
+  get: ^4.6.5
+
+  #slideable
+  flutter_slidable: ^2.0.0
+
+  flutter_web_plugins:
+    sdk: flutter
+
+  hexcolor: ^2.0.7
+
+  image_picker: ^0.8.6
+  camera: ^0.10.0+4
+  camera_platform_interface: ^2.3.1
+
+  # Firebase
+  firebase_performance: ^0.9.0+6
+  firebase_crashlytics: ^3.0.6
+  firebase_core: ^2.3.0
+  firebase_dynamic_links: ^5.0.6
+  firebase_messaging: ^14.1.2
+  firebase_analytics: ^10.0.6
+  firebase_core_platform_interface: ^4.5.2
+
+
+  # Upgrade
+  upgrader: ^5.0.0
+
+  # Connectivity
+  internet_connection_checker: ^0.0.1+4
+
+  # Pull To Refresh
+  pull_to_refresh: ^2.0.0
+  mockito: ^5.3.2
+
+  # Geolocator
+  geolocator: ^9.0.2
+
+  #pagination
+  infinite_scroll_pagination: ^3.2.0
+  app_tracking_transparency: ^2.0.3
+  tutorial_coach_mark: 1.2.4
+  path_provider: ^2.0.11
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  flutter_secure_storage: ^6.1.0
+  flutter_html: ^3.0.0-alpha.6
+
+  # package info
+  package_info_plus: ^3.0.2
+#  collection: ^1.15.0-nullsafety.4
+
+  permission_handler: ^10.2.0
+  permission_handler_platform_interface: ^3.9.0
+
+
+dev_dependencies:
+#  deasy_lint:
+#    path: ../../packages/deasy_lint
+  flutter_launcher_icons: ^0.11.0
+  flutter_test:
+    sdk: flutter
+
+  hive_generator: ^2.0.0
+
+  plugin_platform_interface: ^2.1.3
+
+  build_runner: ^2.3.2
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "resources/images/icons/app_icon_launcher.png"
+
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - resources/images/
+    - resources/images/icons/
+    - resources/images/logo/
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  fonts:
+    - family: KBFGDisplayMedium
+      fonts:
+        - asset: resources/fonts/KBFGDisplay-Medium.ttf
+          weight: 500
+
+    - family: KBFGDisplayLight
+      fonts:
+        - asset: resources/fonts/KBFGDisplay-Light.ttf
+          weight: 500
+
+    - family: KBFGDisplayBold
+      fonts:
+        - asset: resources/fonts/KBFGDisplay-Bold.ttf
+          weight: 700
+
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages

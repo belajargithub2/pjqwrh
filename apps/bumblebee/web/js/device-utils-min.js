@@ -1,0 +1,1 @@
+var du=new DeviceUUID().parse(),dua=[du.language,du.platform,du.os,du.cpuCores,du.isAuthoritative,du.silkAccelerated,du.isKindleFire,du.isDesktop,du.isMobile,du.isTablet,du.isWindows,du.isLinux,du.isLinux64,du.isMac,du.isiPad,du.isiPhone,du.isiPod,du.isSmartTV,du.pixelDepth,du.isTouchScreen],uuid=du.hashMD5(dua.join(":")),browserVersion=du.version,browserType=du.browser,os=du.os;

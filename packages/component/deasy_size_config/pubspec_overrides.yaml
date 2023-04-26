@@ -1,0 +1,4 @@
+# melos_managed_dependency_overrides: deasy_lint
+dependency_overrides:
+  deasy_lint:
+    path: ../../dependency/deasy_lint

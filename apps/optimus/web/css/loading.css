@@ -1,0 +1,51 @@
+.container{
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 20%;
+}
+.loader {
+  width: 78px;
+  height: 78px;
+  display: block;
+  margin:15px auto;
+  position: relative;
+  color: #14A1DC;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after,
+.loader::before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  top: 0;
+  background-color: #14A1DC;
+  border-radius: 50%;
+  animation: scale50 1s infinite ease-in-out;
+}
+.loader::before {
+  top: auto;
+  bottom: 0;
+  background-color: #FFBC00;
+  animation-delay: 0.5s;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes scale50 {
+  0%, 100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/build" />
+      <excludeFolder url="file://$MODULE_DIR$/libs/newwg/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/libs/newwg/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/libs/newwg/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/core/newwg_repository/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/core/newwg_repository/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/core/newwg_repository/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/screens/newwg/order/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/screens/newwg/order/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/screens/newwg/order/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/screens/newwg/stepper/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/screens/newwg/stepper/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/screens/newwg/stepper/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/screens/newwg/additional_documents/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/screens/newwg/additional_documents/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/screens/newwg/additional_documents/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/screens/newwg/customer_confirmation/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/screens/newwg/customer_confirmation/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/screens/newwg/customer_confirmation/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/screens/newwg/verification_customer/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/screens/newwg/verification_customer/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/screens/newwg/verification_customer/.pub" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Flutter Plugins" level="project" />
+    <orderEntry type="library" name="Dart SDK" level="project" />
+    <orderEntry type="library" name="Dart Packages" level="project" />
+  </component>
+</module>

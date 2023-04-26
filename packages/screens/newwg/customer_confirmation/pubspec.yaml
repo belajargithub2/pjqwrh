@@ -1,0 +1,60 @@
+name: customer_confirmation
+description: A new Flutter package project.
+version: 0.0.1
+publish_to: 'none'
+
+environment:
+  sdk: '>=2.18.5 <3.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  get: ^4.6.5
+
+  deasy_pocket: ^1.0.0
+
+  deasy_color:
+    path: ../../../util/deasy_color
+  
+  deasy_text_form:
+    path: ../../../component/deasy_text_form
+
+  deasy_responsive:
+    path: ../../../component/deasy_responsive
+  
+  deasy_size_config:
+    path: ../../../component/deasy_size_config
+  
+  deasy_buttons:
+    path: ../../../component/deasy_buttons
+  
+  deasy_helper:
+    path: ../../../helper/deasy_helper
+
+  deasy_snackbar:
+    path: ../../../component/deasy_snackbar
+  
+  deasy_dialog:
+    path: ../../../component/deasy_dialog
+  
+  deasy_text:
+    path: ../../../component/deasy_text
+  
+  deasy_spinner:
+    path: ../../../component/deasy_spinner
+  
+  newwg_repository:
+    path: ../../../core/newwg_repository
+
+  newwg:
+    path: ../../../../libs/newwg
+
+  stepper:
+    path: ../stepper
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0

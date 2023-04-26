@@ -1,0 +1,6 @@
+# melos_managed_dependency_overrides: deasy_color,deasy_lint
+dependency_overrides:
+  deasy_color:
+    path: ../../util/deasy_color
+  deasy_lint:
+    path: ../../dependency/deasy_lint

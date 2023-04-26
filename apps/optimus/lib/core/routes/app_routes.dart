@@ -1,0 +1,73 @@
+class Routes {
+  Routes._();
+
+  static const DASHBOARD_WEB = Paths.DASHBOARD_WEB;
+  static const DASHBOARD_CANCEL_REQUEST = Paths.DASHBOARD_CANCEL_REQUEST;
+  static const LIST_UPLOAD = Paths.LIST_UPLOAD;
+  static const UPLOAD_PHOTO_CAMERA = Paths.UPLOAD_PHOTO_CAMERA;
+  static const RECEIPT = Paths.RECEIPT;
+  static const BAST = Paths.BAST;
+  static const UPLOAD_PHOTO_REVIEW = Paths.UPLOAD_PHOTO_REVIEW;
+  static const TRANSACTION_PDF = Paths.TRANSACTION_PDF;
+  static const SPLASH_SCREEN = Paths.SPLASH_SCREEN;
+  static const TRANSACTION_WEB = Paths.TRANSACTION_WEB;
+  static const DEALER_MANAGEMENT = Paths.DEALER_MANAGEMENT;
+  static const EDIT_DEALER_MANAGEMENT = Paths.EDIT_DEALER_MANAGEMENT;
+  static const SNAP_AND_BUY_WEB = Paths.SNAP_AND_BUY_WEB;
+  static const CANCEL_TRANSACTION = Paths.CANCEL_TRANSACTION;
+  static const ON_BOARDING = Paths.ON_BOARDING;
+  static const PROFILE = Paths.PROFILE;
+  static const PROFILE_FORGOT_PASSWORD = Paths.PROFILE_FORGOT_PASSWORD;
+  static const CONFIRM_PASSWORD = Paths.CONFIRM_PASSWORD;
+  static const HOME = Paths.HOME;
+  static const NOTIFICATION = Paths.NOTIFICATION;
+  static const HOME_CONTAINER = Paths.HOME_CONTAINER;
+  static const ACCOUNT = Paths.ACCOUNT;
+  static const RESET_PASSWORD_SUCCESS = Paths.RESET_PASSWORD_SUCCESS;
+  static const RESET_PASSWORD = Paths.RESET_PASSWORD;
+  static const RESET_CURRENT_PASSWORD = Paths.INPUT_CURRENT_PASSWORD;
+  static const ECOMMERCE_CLIENT_KEY_MOBILE = Paths.ECOMMERCE_CLIENT_KEY_MOBILE;
+  static const TRANSACTION_IMAGE_PREVIEW = Paths.TRANSACTION_PREVIEW_IMAGE;
+  static const KMOB_SUBMISSION = Paths.KMOB_SUBMISSION;
+  static const KMOB_SUBMISSION_UPLOAD_IMAGE_FROM_CAMERA = Paths.KMOB_SUBMISSION_UPLOAD_IMAGE_FROM_CAMERA;
+  static const KMOB_SUBMISSION_REVIEW_IMAGE = Paths.KMOB_SUBMISSION_REVIEW_IMAGE;
+  static const DELETE_ACCOUNT = Paths.DELETE_ACCOUNT;
+  static const NOT_FOUND = Paths.NOT_FOUND;
+  static const DETAIL_TRANSACTION = Paths.DETAIL_TRANSACTION;
+}
+
+class Paths {
+  static const DASHBOARD_WEB = '/dashboard_web';
+  static const DASHBOARD_CANCEL_REQUEST = '/dashboard/cancel-request';
+  static const LIST_UPLOAD = '/list-upload';
+  static const UPLOAD_PHOTO_CAMERA = '/upload-photo-camera';
+  static const RECEIPT = '/receipt';
+  static const BAST = '/bast';
+  static const UPLOAD_PHOTO_REVIEW = '/upload-photo-review';
+  static const ON_BOARDING = '/on-boarding';
+  static const PROFILE_FORGOT_PASSWORD = '/profile-forgot-password';
+  static const CONFIRM_PASSWORD = '/confirm-password';
+  static const SPLASH_SCREEN = '/splash_screen';
+  static const TRANSACTION_PDF = '/transaction-pdf';
+  static const TRANSACTION_WEB = '/transaction';
+  static const CANCEL_TRANSACTION = '/transaction-cancel';
+  static const DEALER_MANAGEMENT = '/dealer-management';
+  static const EDIT_DEALER_MANAGEMENT = '/edit-dealer-management';
+  static const SNAP_AND_BUY_WEB = '/snap-and-buy';
+  static const PROFILE = '/profile';
+  static const HOME = "/home";
+  static const NOTIFICATION = "/notification";
+  static const HOME_CONTAINER = "/home_container";
+  static const ACCOUNT = "/account";
+  static const RESET_PASSWORD_SUCCESS = "/success_reset_password";
+  static const RESET_PASSWORD = "/reset_password";
+  static const INPUT_CURRENT_PASSWORD = "/reset_current_password";
+  static const ECOMMERCE_CLIENT_KEY_MOBILE = "/ecommerce_client_key_mobile";
+  static const TRANSACTION_PREVIEW_IMAGE = "/transaction-preview_image";
+  static const KMOB_SUBMISSION = "/pengajuan-kmob";
+  static const KMOB_SUBMISSION_UPLOAD_IMAGE_FROM_CAMERA = "/pengajuan-kmob-camera";
+  static const KMOB_SUBMISSION_REVIEW_IMAGE = "/pengajuan-kmob-review-image";
+  static const DELETE_ACCOUNT = "/delete_account";
+  static const NOT_FOUND = "/not-found";
+  static const DETAIL_TRANSACTION = "/detail-transaction";
+}
