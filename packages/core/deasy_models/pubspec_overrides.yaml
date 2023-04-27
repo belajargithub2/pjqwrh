@@ -1,6 +1,0 @@
-# melos_managed_dependency_overrides: deasy_encryptor,deasy_pocket
-dependency_overrides:
-  deasy_encryptor:
-    path: ../../helper/deasy_encryptor
-  deasy_pocket:
-    path: ../../util/deasy_pocket
