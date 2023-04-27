@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   get: ^4.6.5
-  camera: 0.10.3
+  camera: 0.10.0
   flutter_svg: ^1.1.6
   permission_handler: ^10.2.0
   deasy_text_form:
