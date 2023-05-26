@@ -1,4 +1,4 @@
-name: Flutter Build APK
+name: Zip Folder
 
 on:
   push:
