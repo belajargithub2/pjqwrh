@@ -65,8 +65,8 @@ apps/bumblebee/.vscode/
 *.pub-cache/
 *.pub/
 **/build/
-**/pubspec.lock
-pubspec.lock
+# **/pubspec.lock
+# pubspec.lock
 **/coverage/
 
 # Web related
