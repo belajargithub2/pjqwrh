@@ -21,20 +21,20 @@ jobs:
       - name: zip folder satu
         uses: vimtor/action-zip@v1
         with:
-          files: satu/
-          dest: satu.zip
+          files: satu
+          dest: .
 
       - name: zip folder dua
         uses: vimtor/action-zip@v1
         with:
-          files: satu/dua/
-          dest: dua.zip
+          files: satu/dua
+          dest: .
 
       - name: zip folder tiga
         uses: vimtor/action-zip@v1
         with:
-          files: satu/dua/tiga/
-          dest: tiga.zip
+          files: satu/dua/tiga
+          dest: .
 
       - name: Setup Output zip
         id: artifact
