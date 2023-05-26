@@ -19,19 +19,19 @@ jobs:
         uses: actions/checkout@main
 
       - name: zip folder satu
-        uses: vimtor/action-zip@v1
+        uses: vimtor/action-zip@main
         with:
           files: satu/
           dest: satu.zip
 
       - name: zip folder dua
-        uses: vimtor/action-zip@v1
+        uses: vimtor/action-zip@main
         with:
           files: satu/dua/
           dest: dua.zip
 
       - name: zip folder tiga
-        uses: vimtor/action-zip@v1
+        uses: vimtor/action-zip@main
         with:
           files: satu/dua/tiga/
           dest: tiga.zip
@@ -43,8 +43,8 @@ jobs:
           echo "dua=dua.zip" >> $GITHUB_OUTPUT
           echo "tiga=tiga.zip" >> $GITHUB_OUTPUT
 
-      - name: Upload AAB to github
-        uses: actions/upload-artifact@v3
+      - name: Upload zip
+        uses: actions/upload-artifact@main
         with:
-          name: release-aab
+          name: ${{ steps.artifact.outputs.satu }}
           path: ${{ steps.artifact.outputs.satu }}
