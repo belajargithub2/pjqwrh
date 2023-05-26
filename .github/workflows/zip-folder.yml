@@ -17,14 +17,24 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@main
+	
+      - name: zip folder
+      - uses: vimtor/action-zip@v1
+        with:
+          files: satu/
+          dest: satu.zip
+      - uses: vimtor/action-zip@v1
+        with:
+          files: satu/dua/
+          dest: dua.zip
+      - uses: vimtor/action-zip@v1
+        with:
+          files: satu/dua/tiga/
+          dest: tiga.zip
 
-      - name: Setup Output AAB
+      - name: Setup Output zip
         id: artifact
         run: |
-	  apt-get install zip -y
-	  zip -r satu.zip satu
-	  zip -r dua.zip satu/dua
-	  zip -r tiga.zip satu/dua/tiga
           echo "satu=satu.zip" >> $GITHUB_OUTPUT
           echo "dua=dua.zip" >> $GITHUB_OUTPUT
           echo "tiga=tiga.zip" >> $GITHUB_OUTPUT
