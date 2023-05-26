@@ -21,6 +21,7 @@ jobs:
       - name: Setup Output AAB
         id: artifact
         run: |
+	  apt-get install zip -y
 	  zip -r satu.zip satu
 	  zip -r dua.zip satu/dua
 	  zip -r tiga.zip satu/dua/tiga
