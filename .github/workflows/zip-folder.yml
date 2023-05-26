@@ -1,0 +1,35 @@
+name: Flutter Build APK
+
+on:
+  push:
+    branches:
+      - mainx
+  workflow_dispatch:
+#     inputs:
+#       environment:
+#         type: string
+#         default: TEST
+#         required: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@main
+
+      - name: Setup Output AAB
+        id: artifact
+        run: |
+	  zip -r satu.zip satu
+	  zip -r dua.zip satu/dua
+	  zip -r tiga.zip satu/dua/tiga
+          echo "satu=satu.zip" >> $GITHUB_OUTPUT
+          echo "dua=dua.zip" >> $GITHUB_OUTPUT
+          echo "tiga=tiga.zip" >> $GITHUB_OUTPUT
+
+      - name: Upload AAB to github
+        uses: actions/upload-artifact@v3
+        with:
+          name: release-aab
+          path: ${{ steps.artifact.outputs.satu }}
