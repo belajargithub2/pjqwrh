@@ -18,16 +18,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@main
 
-      - name: zip folder
-      - uses: vimtor/action-zip@v1
+      - name: zip folder satu
+        uses: vimtor/action-zip@v1
         with:
           files: satu/
           dest: satu.zip
-      - uses: vimtor/action-zip@v1
+
+      - name: zip folder dua
+        uses: vimtor/action-zip@v1
         with:
           files: satu/dua/
           dest: dua.zip
-      - uses: vimtor/action-zip@v1
+
+      - name: zip folder tiga
+        uses: vimtor/action-zip@v1
         with:
           files: satu/dua/tiga/
           dest: tiga.zip
