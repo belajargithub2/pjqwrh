@@ -22,26 +22,26 @@ jobs:
         uses: vimtor/action-zip@v1
         with:
           files: satu/
-          dest: .
+          dest: satu.zip
 
-      - name: zip folder dua
-        uses: vimtor/action-zip@v1
-        with:
-          files: satu/dua/
-          dest: .
+#       - name: zip folder dua
+#         uses: vimtor/action-zip@v1
+#         with:
+#           files: satu/dua/
+#           dest: .
 
-      - name: zip folder tiga
-        uses: vimtor/action-zip@v1
-        with:
-          files: satu/dua/tiga/
-          dest: .
+#       - name: zip folder tiga
+#         uses: vimtor/action-zip@v1
+#         with:
+#           files: satu/dua/tiga/
+#           dest: .
 
       - name: Setup Output zip
         id: artifact
         run: |
           echo "satu=satu.zip" >> $GITHUB_OUTPUT
-          echo "dua=dua.zip" >> $GITHUB_OUTPUT
-          echo "tiga=tiga.zip" >> $GITHUB_OUTPUT
+#          echo "dua=dua.zip" >> $GITHUB_OUTPUT
+#          echo "tiga=tiga.zip" >> $GITHUB_OUTPUT
 
       - name: Upload zip
         uses: actions/upload-artifact@v3
