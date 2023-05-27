@@ -18,8 +18,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@main
 
-      - name: Upload zip
-        uses: actions/upload-artifact@v3
+      - name: Upload satu
+        uses: actions/upload-artifact@main
         with:
           name: satu
           path: satu/
+
+      - name: Upload dua
+        uses: actions/upload-artifact@main
+        with:
+          name: dua
+          path: satu/dua
+
+      - name: Upload tiga
+        uses: actions/upload-artifact@main
+        with:
+          name: tiga
+          path: satu/tiga
