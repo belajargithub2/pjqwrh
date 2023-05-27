@@ -35,12 +35,12 @@ jobs:
       
       - name: build aar
         run: flutter build aar
-        working-directory: ./libs/newwg
+        working-directory: ./libs/payment
         
       - name: Setup Output AAR
         id: artifact
         run: |
-          echo "folders=./libs/newwg/build/host/outputs/repo/com/kreditplus/deasy/newwg" >> $GITHUB_OUTPUT
+          echo "folders=./libs/payment/build/host/outputs/repo/com/example/payment" >> $GITHUB_OUTPUT
       
       - name: upload debug folder
         uses: actions/upload-artifact@main
