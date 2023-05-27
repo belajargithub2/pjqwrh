@@ -1,0 +1,61 @@
+name: Build AAR
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  build_code:
+    name: Check out & Setup Flutter
+    runs-on: ubuntu-latest
+    env:
+      environment: DEV
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup JDK Version
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin' # See 'Supported distributions' for available options
+          java-version: '11'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v2
+
+      - name: flutter Action
+        uses: subosito/flutter-action@v2.5.0
+        with:
+          flutter-version: '3.7.5'
+          channel: 'stable'
+          cache: true
+
+      - name: flutter check version
+        run: flutter --version
+      
+      - name: build aar
+        run: flutter build aar
+        working-directory: ./libs/newwg
+        
+      - name: Setup Output AAR
+        id: artifact
+        run: |
+          echo "folders=./libs/newwg/build/host/outputs/repo/com/kreditplus/deasy/newwg" >> $GITHUB_OUTPUT
+      
+      - name: upload debug folder
+        uses: actions/upload-artifact@main
+        with:
+          name: debug
+          path: ${{ steps.artifact.outputs.folders }}/flutter_debug/
+      
+      - name: upload profile folder
+        uses: actions/upload-artifact@main
+        with:
+          name: debug
+          path: ${{ steps.artifact.outputs.folders }}/flutter_profile/
+      
+      - name: upload release folder
+        uses: actions/upload-artifact@main
+        with:
+          name: debug
+          path: ${{ steps.artifact.outputs.folders }}/flutter_release/
