@@ -51,11 +51,11 @@ jobs:
       - name: upload profile folder
         uses: actions/upload-artifact@main
         with:
-          name: debug
+          name: profile
           path: ${{ steps.artifact.outputs.folders }}/flutter_profile/
       
       - name: upload release folder
         uses: actions/upload-artifact@main
         with:
-          name: debug
+          name: release
           path: ${{ steps.artifact.outputs.folders }}/flutter_release/
