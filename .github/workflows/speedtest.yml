@@ -11,4 +11,4 @@ jobs:
         uses: actions/checkout@main
         
       - name: speedtest
-        run: apt-get install -y speedtest-cli && speedtest-cli
+        run: sudo apt-get install -y speedtest-cli && sudo speedtest-cli
