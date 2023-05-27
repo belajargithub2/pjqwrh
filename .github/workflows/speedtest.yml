@@ -1,0 +1,18 @@
+name: Speedtest
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@main
+        
+      - name: speedtest
+        run: |
+	  apt-get install -y curl
+	  curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
+	  apt-get install speedtest
+	  speedtest-cli

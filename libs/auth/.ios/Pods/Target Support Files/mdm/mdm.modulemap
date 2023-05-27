@@ -1,0 +1,6 @@
+framework module mdm {
+  umbrella header "mdm-umbrella.h"
+
+  export *
+  module * { export * }
+}

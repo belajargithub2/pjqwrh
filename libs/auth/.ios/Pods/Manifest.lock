@@ -1,0 +1,29 @@
+PODS:
+  - Flutter (1.0.0)
+  - FlutterPluginRegistrant (0.0.1):
+    - Flutter
+    - mdm
+  - mdm (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - FlutterPluginRegistrant (from `Flutter/FlutterPluginRegistrant`)
+  - mdm (from `.symlinks/plugins/mdm/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  FlutterPluginRegistrant:
+    :path: Flutter/FlutterPluginRegistrant
+  mdm:
+    :path: ".symlinks/plugins/mdm/ios"
+
+SPEC CHECKSUMS:
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  FlutterPluginRegistrant: 73ff4085739446fc3568632ebf5c842d2f6ba353
+  mdm: 8a0fef2bcdbcb1d3664f1c2ebfc48b10af61fc64
+
+PODFILE CHECKSUM: f23cdaf6df7581c877bdc345e211b5b99c6b6f59
+
+COCOAPODS: 1.12.0
